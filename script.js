@@ -4,4 +4,11 @@ function toggleMenu() {
     menu.classList.toggle("open");
     icon.classList.toggle("open");
   }
+
+  function showModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+  }
   
+  function hideModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
