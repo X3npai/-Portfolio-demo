@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width */
 }
 
 body {
@@ -149,9 +150,13 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
+  padding-top: 10vh; /* Increased padding-top for more space */
+  height: 96vh; /* Keep this if you want sections to take up most of viewport height, otherwise consider removing */
+  /* MODIFIED: Changed fixed margin to max-width and auto margin for responsiveness */
+  max-width: 1200px; /* Limits overall content width on large screens */
+  margin: 0 auto;    /* Centers the section horizontally */
+  padding-left: 1rem; /* Adds padding on sides for smaller screens */
+  padding-right: 1rem;/* Adds padding on sides for smaller screens */
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -267,6 +272,7 @@ section {
   position: relative;
 }
 
+/* This container holds the experience and education cards (in About section) */
 .about-containers {
   gap: 2rem;
   margin-bottom: 2rem;
@@ -278,6 +284,7 @@ section {
   flex-direction: column;
 }
 
+/* This applies display: flex to the .about-containers in the About section */
 .about-containers,
 .about-details-container {
   display: flex;
@@ -314,43 +321,43 @@ section {
   margin: auto 0;
 }
 
-//* EXPERIENCE SECTION */
+/* EXPERIENCE SECTION */
 
 .experience-sub-title {
-  color: rgb(85, 85, 85); /* Darker text for contrast on white */
+  color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 2rem;
-  margin-bottom: 2rem; /* Reduced margin */
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .experience-container {
   display: flex;
   justify-content: center;
-  padding: 30px 20px; /* Reduced padding */
-  background-color: white; /* White background */
-  color: rgb(85, 85, 85); /* Darker text */
+  padding: 30px 20px;
+  background-color: white;
+  color: rgb(85, 85, 85);
 }
 
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px; /* Reduced gap */
-  max-width: 1000px; /* Keep a max width */
-  width: 100%; /* Take full width */
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .experience-item {
-  background: #f0f0f0; /* Light gray for cards on white background */
-  padding: 25px; /* Reduced padding */
+  background: #f0f0f0;
+  padding: 25px;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .experience-item:hover {
-  transform: translateY(-3px); /* Less dramatic lift effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lighter shadow on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .icon {
@@ -365,14 +372,14 @@ section {
 }
 
 .experience-item h3 {
-  font-size: 1.1rem; /* Slightly smaller skill name */
+  font-size: 1.1rem;
   margin: 8px 0;
   font-weight: 600;
 }
 
 .experience-item p {
-  font-size: 0.9rem; /* Smaller skill level text */
-  color: #777; /* Slightly darker text for level */
+  font-size: 0.9rem;
+  color: #777;
 }
 
 /* PROJECTS SECTION */
@@ -382,32 +389,42 @@ section {
   text-align: center;
 }
 
+/* MODIFIED: Changed to force 3 columns AND added justify-items for centering */
+.project-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Force 3 columns */
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  justify-items: center; /* Centers items within their grid cells */
+}
+
 .color-container {
-  border: 2px solid rgb(200, 200, 200); /* Softer border */
-  background: rgb(255, 255, 255); /* Clean white background */
-  border-radius: 15px; /* Smooth rounded corners */
-  padding: 20px; /* Added padding */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 2px solid rgb(200, 200, 200);
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .color-container:hover {
-  transform: scale(1.03); /* Slight hover effect */
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  transform: scale(1.03);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .project-img {
-  border-radius: 1rem; /* Softer rounded edges */
-  width: 100%; /* Ensures full width */
-  height: auto; /* Keeps aspect ratio */
-  object-fit: cover; /* Ensures the image covers the space */
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .project-title {
   margin: 1rem 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333; /* Slightly darker for readability */
+  color: #333;
 }
 
 .project-btn {
@@ -423,8 +440,6 @@ section {
   background: rgb(230, 230, 230);
   border-color: black;
 }
-
-/* ... your existing CSS ... */
 
 /* Modal Styles */
 .modal {
@@ -463,14 +478,12 @@ section {
   cursor: pointer;
 }
 
-/* ... your existing CSS ... */
-
 /* Download Button Styles */
 .btn-color-2 {
   background-color: #e0e0e0;
   color: black;
   border: 1px solid rgb(163, 163, 163);
-  padding: 10px 30px; /* Increased padding */
+  padding: 10px 30px;
   border-radius: 5px;
   text-decoration: none;
   font-size: 1rem;
@@ -478,7 +491,6 @@ section {
   transition: background-color 0.3s ease;
   cursor: pointer;
   white-space: nowrap;
-  /* Remove min-width and width constraints if any */
 }
 
 .btn-color-2:hover {
@@ -488,69 +500,11 @@ section {
 /* Specific styling for the download button */
 .details-container.color-container button {
   margin: 15px auto;
-  /* Remove any width constraints on the button's container */
-  width: auto; /* Ensure container doesn't restrict button width */
-  display: block; /* Important for margin: auto to center */
+  width: auto;
+  display: block;
 }
-
-
-
-
-/* ... your existing CSS ... */
 
 /* CERTIFICATES SECTION */
-
-#certificates {
-  padding: 40px 20px; /* Add padding to the section */
-}
-
-.certificates-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1200px; /* Adjust as needed */
-  margin: 0 auto; /* Center the grid */
-}
-
-.certificate-item {
-  background: #f0f0f0; /* Light background for cards */
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.certificate-item:hover {
-  transform: scale(1.03);
-}
-
-.certificate-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.certificate-item h3 {
-  font-size: 1.1rem;
-  margin-top: 10px;
-}
-
-/* Modal Styles (Reuse existing modal styles) */
-.modal {
-  /* ... your existing modal styles ... */
-}
-
-.modal-content {
-  /* ... your existing modal-content styles ... */
-}
-
-.close {
-  /* ... your existing close button styles ... */
-}
-
-/* ... your existing CSS ... */
 
 #certificates {
   padding: 40px 20px;
@@ -558,11 +512,11 @@ section {
 
 .certificates-container {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
     "item1 item2 item3"
     "item4 item5 item6"
-    ". item7 ."; /* Center item7 */
-  grid-template-columns: repeat(3, 1fr);
+    ". item7 .";
   grid-gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -653,4 +607,3 @@ footer {
 footer p {
   text-align: center;
 }
-
