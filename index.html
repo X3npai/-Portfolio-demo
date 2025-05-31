@@ -38,6 +38,7 @@
         </div>
       </div>
     </nav>
+
     <section id="profile">
       <div class="section__pic-container">
         <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
@@ -72,7 +73,14 @@
           />
         </div>
       </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#about'"
+      />
     </section>
+
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
@@ -126,6 +134,7 @@
         onclick="location.href='./#experience'"
       />
     </section>
+
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
@@ -197,7 +206,7 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#experience'"
+        onclick="location.href='./#projects'"
       />
     </section>
 
@@ -271,6 +280,25 @@
             </div>
           </div>
 
+          <div class="details-container color-container"> 
+            <div class="article-container">
+              <img
+                src="./assets/project-4.jpg" 
+                alt="Project 4"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Four</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('./assets/project-4.pdf')"
+              >
+                Download Project
+              </button>
+            </div>
+          </div>
+
           <div class="details-container color-container ojt-report-item">
             <div class="article-container">
               <img
@@ -288,14 +316,12 @@
               </button>
             </div>
           </div>
-          
         </div>
-      </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#contact'"
+        onclick="location.href='./#certificates'"
       />
 
       <div id="modal2" class="modal">
@@ -356,6 +382,12 @@
           <h3>Artificial Intelligence Fundamentals</h3>
         </div>
       </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
     </section>
 
     <section id="contact">
@@ -379,7 +411,14 @@
           <p><a href="https://www.linkedin.com/in/miguelito-cubita-420a73364/">LinkedIn</a></p>
         </div>
       </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#profile'"
+      />
     </section>
+
     <footer>
       <nav>
         <div class="nav-links-container">
@@ -394,6 +433,17 @@
       </nav>
       <p>Copyright &#169; 2025 Miguelito Cubita. All Rights Reserved.</p>
     </footer>
+
     <script src="script.js"></script>
+    <script>
+      // Add your modal functions here if they are not in script.js
+      function showModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+      }
+
+      function hideModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
+    </script>
   </body>
 </html>
